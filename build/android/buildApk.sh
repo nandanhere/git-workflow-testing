@@ -64,7 +64,7 @@ which python3.7
 #! /bin/bash
 mkdir /home/runner/.buildozer/android/platform/android-sdk/
 Cwd /home/runner/.buildozer/android/platform/
-wget https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip
+wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 
 unzip -q /home/runner/.buildozer/android/platform/android-sdk/commandlinetools-linux-6514223_latest.zip
 Cwd /home/runner/.buildozer/android/platform/android-sdk
 /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0"

@@ -25,11 +25,13 @@ PYTHON_PATH='/usr/bin/python3.7'
 ###################
 
 # install os-level depends
-sudo apt-get update; sudo apt-get -y install python3.7 python3-pip python3-setuptools wget rsync fuse
-sudo apt-get install -y build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
 
 pip install buildozer
-pip install cython==0.29.19
+pip install cython
+
+sudo apt-get update; sudo apt-get -y install python3.7 python3-pip python3-setuptools wget rsync fuse
+sudo apt-get install -y build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
+sudo apt-get install aidl
 
 
 sudo apt-get install -y libgstreamer1.0  gstreamer1.0-plugins-base gstreamer1.0-plugins-good
@@ -65,6 +67,9 @@ which python3.7
 cd src
 buildozer init
 buildozer -v android debug -y
+
+
+
 exit "$?"
 EOF
 

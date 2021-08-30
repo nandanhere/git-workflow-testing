@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+sudo set -x
 ################################################################################
 # File:    android/buildApk.sh
 # Purpose: Builds an android apk for a simple Hello World
@@ -57,12 +57,12 @@ which python3.7
 ##################
 
 # cleanup old appdir, if exists
-rm -rf /tmp/kivy_appdir
 
 
 #! /bin/bash
 
 # Export APPRUN if running from an extracted image
+
 buildozer init
 
 exit "$?"

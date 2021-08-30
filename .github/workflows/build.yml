@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Execute script to build android AppImage
-      run: "build/android/buildApk.sh"
+      run: "sudo build/android/buildApk.sh"
       shell: bash
 
     - uses: actions/upload-artifact@v2

@@ -71,7 +71,12 @@ cd /home/runner/.buildozer/android/platform/android-sdk/
 unzip -q commandlinetools-linux-6514223_latest.zip 
 cd /home/runner/.buildozer/android/platform/android-sdk/
 ls
-/home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0" -y
+#! /usr/bin/expect -f
+/home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0"
+expect "(y/N)"
+sleep 1
+send "y"
+
 
 # Export APPRUN if running from an extracted image
 cd src

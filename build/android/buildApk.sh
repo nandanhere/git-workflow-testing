@@ -63,10 +63,12 @@ which python3.7
 
 #! /bin/bash
 mkdir /home/runner/.buildozer/android/platform/android-sdk/
-Cwd /home/runner/.buildozer/android/platform/
+cd /home/runner/.buildozer/android/platform/
 wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 
+echo "unzipping"
 unzip -q /home/runner/.buildozer/android/platform/android-sdk/commandlinetools-linux-6514223_latest.zip
-Cwd /home/runner/.buildozer/android/platform/android-sdk
+cd /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager
+ls
 /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0"
 
 # Export APPRUN if running from an extracted image

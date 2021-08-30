@@ -67,6 +67,7 @@ which python3.7
 cd src
 buildozer init y
 buildozer -v android debug y
+yes
 
 
 

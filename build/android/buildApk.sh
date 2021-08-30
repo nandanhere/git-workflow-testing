@@ -67,7 +67,9 @@ which python3.7
 cd src
 buildozer init y
 buildozer android debug
-echo y 
+expect "Accept? (y/N):"
+sleep 1
+send "y"
 
 
 

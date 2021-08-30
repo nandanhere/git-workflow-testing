@@ -62,7 +62,9 @@ which python3.7
 
 
 #! /bin/bash
+mkdir "/home/runner/.buildozer/android/licenses"
 
+echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "/home/runner/.buildozer/android/licenses/android-sdk-license"
 # Export APPRUN if running from an extracted image
 cd src
 buildozer init y

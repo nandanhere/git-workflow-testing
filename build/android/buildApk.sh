@@ -66,8 +66,7 @@ which python3.7
 # Export APPRUN if running from an extracted image
 cd src
 buildozer init y
-buildozer -v android debug y
-yes
+buildozer android debug -y -y y y y y 
 
 
 

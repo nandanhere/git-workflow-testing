@@ -62,7 +62,7 @@ which python3.7
 #! /bin/bash
 
 # Export APPRUN if running from an extracted image
-
+cd src
 buildozer init
 
 exit "$?"

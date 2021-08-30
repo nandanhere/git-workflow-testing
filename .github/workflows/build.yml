@@ -24,7 +24,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: kivySnake-android-x86_64
-        path: build/
+        path: ./
 
     - name: Create dist tarball
       run: 'tar -cjvf kivySnake-android.${{ github.run_id }}.tar.bz2 ./*'

@@ -66,10 +66,8 @@ which python3.7
 # Export APPRUN if running from an extracted image
 cd src
 buildozer init y
-buildozer android debug
-expect "Accept? (y/N):"
-sleep 1
-send "y"
+buildozer android debug yes
+
 
 
 

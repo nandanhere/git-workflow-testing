@@ -61,24 +61,24 @@ which python3.7
 # cleanup old appdir, if exists
 
 
-#! /bin/bash
-mkdir /home/runner/.buildozer/android/platform/android-sdk/
-cd /home/runner/.buildozer/android/platform/
-wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 
-echo "unzipping"
-cd /home/runner/.buildozer/android/platform/android-sdk/
+# #! /bin/bash
+# mkdir /home/runner/.buildozer/android/platform/android-sdk/
+# cd /home/runner/.buildozer/android/platform/
+# wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 
+# echo "unzipping"
+# cd /home/runner/.buildozer/android/platform/android-sdk/
 
-unzip -q commandlinetools-linux-6514223_latest.zip 
-cd /home/runner/.buildozer/android/platform/android-sdk/
-ls
-#! /usr/bin/expect -f
-yes | /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0"
+# unzip -q commandlinetools-linux-6514223_latest.zip 
+# cd /home/runner/.buildozer/android/platform/android-sdk/
+# ls
+# #! /usr/bin/expect -f
+# yes | /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --sdk_root=/home/runner/.buildozer/android/platform/android-sdk "build-tools;31.0.0"
 
 
 # Export APPRUN if running from an extracted image
 cd src
 buildozer init y
-#buildozer android debug yes
+echo y | buildozer android debug 
 
 
 

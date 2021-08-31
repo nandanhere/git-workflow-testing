@@ -24,7 +24,7 @@ PYTHON_PATH='/usr/bin/python3.7'
 # INSTALL DEPENDS #
 ###################
 
-# install os-level depends
+install os-level depends
 
 pip install buildozer
 pip install cython
@@ -44,6 +44,8 @@ uname -a
 cat /etc/issue
 which python
 which python3.7
+
+
 git lfs install
 
 
@@ -67,7 +69,7 @@ git lfs install
 git clone https://github.com/nandanhere/android-build.git
 cd android-build
 git lfs pull
-unzip buildozer.zip -d /home/runner
+unzip -qq buildozer.zip -d /home/runner
 
 # cd /home/runner/.buildozer/android/platform/
 

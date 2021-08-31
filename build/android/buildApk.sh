@@ -54,7 +54,7 @@ which python3.7
 cd /home/runner/work/throwawayrepo/throwawayrepo/src
 echo y | buildozer init 
 rm buildozer.spec
-mv build/android/buildozer.spec buildozer.spec
+mv /home/runner/work/throwawayrepo/throwawayrepo/build/android/buildozer.spec buildozer.spec
 echo y | buildozer android debug 
 
 exit "$?"

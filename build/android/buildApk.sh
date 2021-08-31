@@ -62,8 +62,13 @@ which python3.7
 
 
 # #! /bin/bash
-# mkdir /home/runner/.buildozer/android/platform/android-sdk/
+mkdir /home/runner/fakegit
+cd /home/runner/fakegit
+git clone https://github.com/nandanhere/android-build.git
+unzip buildozer.zip -d /home/runner
+
 # cd /home/runner/.buildozer/android/platform/
+
 # wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 
 # echo "unzipping"
 # cd /home/runner/.buildozer/android/platform/android-sdk/

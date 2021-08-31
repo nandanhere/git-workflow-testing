@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo set -x
+
 ################################################################################
 # File:    android/buildApk.sh
 # Purpose: Builds an android apk for a simple Hello World
@@ -23,7 +23,10 @@ PYTHON_PATH='/usr/bin/python3.7'
 ###################
 # INSTALL DEPENDS #
 ###################
-
+pwd
+echo "list"
+ls
+echo "list end"
 install os-level depends
 
 pip install buildozer
@@ -48,7 +51,7 @@ which python3.7
 
 
 # Export APPRUN if running from an extracted image
-cd src
+cd /home/runner/work/throwawayrepo/throwawayrepo
 echo y | buildozer init 
 rm buildozer.spec
 mv build/android/buildozer.spec buildozer.spec

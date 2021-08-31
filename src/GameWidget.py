@@ -5,6 +5,7 @@ from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.core.audio import Sound, SoundLoader
+from kivy.utils import platform
 
 global maxx,maxy,minx,miny
 sizee = Window.size #type:ignore
@@ -15,10 +16,10 @@ minx,miny = maxx * .1 , maxy * .1
 # requirements = python3,kivy,ffpyplayer - add in .spec
 
 
-ateadonut = SoundLoader.load('assets/ateadonut.wav'); ateadonut.volume = 0.5
+ateadonut = SoundLoader.load('assets/ateadonut.wav'); ateadonut.volume = 0.5        #type: ignore
 atepoison = SoundLoader.load('assets/atepoison.wav');
-startgame = SoundLoader.load('assets/startgame.wav'); startgame.volume = 0.5
-died = SoundLoader.load('assets/died.wav'); died.volume =  0.5
+startgame = SoundLoader.load('assets/startgame.wav'); startgame.volume = 0.5        #type: ignore
+died = SoundLoader.load('assets/died.wav'); died.volume =  0.5                      #type: ignore
 gotahighscore = SoundLoader.load('assets/gotahighscore.wav')
 oneup = SoundLoader.load('assets/oneup.wav')
 
@@ -29,8 +30,9 @@ class GameWidget(Widget):
         global label
         label = labelWidget
 # keyboard controls----------
-        self._keyboard = Window.request_keyboard(self._on_keyboard_closed,self) #type:ignore
-        self._keyboard.bind(on_key_down=self._on_key_down,) #type:ignore
+        if platform == 'android':
+            self._keyboard = Window.request_keyboard(self._on_keyboard_closed,self) #type:ignore
+            self._keyboard.bind(on_key_down=self._on_key_down,) #type:ignore
 #  keyboard controls
         self.config = config
         self.head = Cell(pos=(maxx // 2,maxy / 2),size=GameConfig.DEFAULT_SIZE)
@@ -63,9 +65,9 @@ class GameWidget(Widget):
         if label.score % 5000 == 0 : 
             self.config.CHANCES += 1
             label.chances += 1
-            oneup.play()
+            oneup.play()                                                                    #type: ignore
         if label.score > self.config.HIGH_SCORE:
-                if self.config.STATE == label.state == 'PLAY': gotahighscore.play()
+                if self.config.STATE == label.state == 'PLAY': gotahighscore.play()         #type: ignore
                 self.config.HIGH_SCORE = label.score
                 label.highScore = label.score
                 label.state = 'EASTEREGG'
@@ -77,7 +79,7 @@ class GameWidget(Widget):
         if label.state == "PAUSED" or self.config.STATE == 'PAUSED':
             label.state = "PLAY"
             self.config.STATE = "PLAY"
-            startgame.play()
+            startgame.play()                                                                #type: ignore
 
         if label.state == "DEAD" or self.config.STATE == 'DEAD':
             self.config.RESET_COUNT -= 1
@@ -99,7 +101,7 @@ class GameWidget(Widget):
         if label.state == "PAUSED" or self.config.STATE == "PAUSED":
                 label.state = "PLAY"
                 self.config.STATE = "PLAY"
-                startgame.play()
+                startgame.play()                                                            #type: ignore
 
         if label.state == "DEAD":
             self.config.RESET_COUNT -= 1
@@ -142,16 +144,16 @@ class GameWidget(Widget):
             if collides(self.head.pos,food.pos,self.snakeList[0].size,food.size):
                 if food.type == 'TAINTED':
                     label.getHit()
-                    atepoison.play()
+                    atepoison.play()                                                        #type: ignore
                     if label.chances == 0:
                         self.config.STATE = 'DEAD'
                         label.state = "DEAD"
-                        died.play()
+                        died.play()                                                         #type: ignore
                         for i in range(len(self.snakeList)):
                             self.snakeList[i].type = "DEAD" if i % 2 == 0 else 'DEAD1'
                 else:
                     self.increment_score()
-                    ateadonut.play()
+                    ateadonut.play()                                                        #type: ignore
                     type = "BODY" if len(self.snakeList) % 2 == 0 else 'BODY1'
                     sb = Cell(pos=(currentx,currenty),type=type) #type:ignore
                     self.snakeList.append(sb)

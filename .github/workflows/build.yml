@@ -26,6 +26,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: kivySnake-android-arm64
+        # replace helloWorld with package name
         path: /home/runner/work/throwawayrepo/throwawayrepo/src/bin/helloWorld-0.1-armeabi-v7a-debug.apk
 
     - name: Create dist tarball

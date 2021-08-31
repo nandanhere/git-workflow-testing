@@ -14,13 +14,14 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.storage.jsonstore import JsonStore
 from kivy.utils import platform
-# for android -----------------
-# from android.permissions import request_permissions, Permission
-# from android.storage import primary_external_storage_path
+# for android ----------
+if platform == 'android':
+    from android.permissions import request_permissions, Permission
+    from android.storage import primary_external_storage_path
 # for android-------
 global addr,store
 addr = ""
-
+print(sys.platform)
 def getAddr():
     global addr
     if platform == 'android':

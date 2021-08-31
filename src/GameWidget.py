@@ -96,7 +96,7 @@ class GameWidget(Widget):
 
     def _on_key_down(self,keyboard,keycode,text,modifiers):
         directions = ['up','right','down','left','w','d','s','a']
-        if label.state == "PAUSED":
+        if label.state == "PAUSED" or self.config.STATE == "PAUSED":
                 label.state = "PLAY"
                 self.config.STATE = "PLAY"
                 startgame.play()

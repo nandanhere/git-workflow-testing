@@ -17,7 +17,6 @@ class ScoreLabel(FloatLayout):
 
     def updateText(self):
         text = ""
-# TODO : highscore label 
         if self.state == "HIGHSCORE":
             pass
         if self.state == "PLAY":

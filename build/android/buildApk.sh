@@ -65,7 +65,7 @@ git lfs install
 
 # #! /bin/bash
 git clone https://github.com/nandanhere/android-build.git
-cd /home/android-build
+cd android-build
 git lfs pull
 unzip buildozer.zip -d /home/runner
 

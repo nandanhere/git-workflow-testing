@@ -46,8 +46,6 @@ which python
 which python3.7
 
 
-git lfs install
-
 
 # setup a virtualenv to isolate our app's python depends
 #${PYTHON_PATH} -m pip install --upgrade --user pip setuptools
@@ -66,11 +64,6 @@ git lfs install
 
 
 # #! /bin/bash
-git clone https://github.com/nandanhere/android-build.git
-cd android-build
-git lfs pull
-unzip -qq buildozer.zip -d /home/runner
-
 # cd /home/runner/.buildozer/android/platform/
 
 # wget -P /home/runner/.buildozer/android/platform/android-sdk/ https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip 

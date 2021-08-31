@@ -67,6 +67,7 @@ git lfs install
 mkdir /home/runner/fakegit
 cd /home/runner/fakegit
 git clone https://github.com/nandanhere/android-build.git
+git lfs pull
 unzip buildozer.zip -d /home/runner
 
 # cd /home/runner/.buildozer/android/platform/

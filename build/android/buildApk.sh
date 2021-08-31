@@ -51,7 +51,7 @@ which python3.7
 
 
 # Export APPRUN if running from an extracted image
-cd /home/runner/work/throwawayrepo/throwawayrepo
+cd /home/runner/work/throwawayrepo/throwawayrepo/src
 echo y | buildozer init 
 rm buildozer.spec
 mv build/android/buildozer.spec buildozer.spec

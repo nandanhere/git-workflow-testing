@@ -44,6 +44,8 @@ uname -a
 cat /etc/issue
 which python
 which python3.7
+git lfs install
+
 
 # setup a virtualenv to isolate our app's python depends
 #${PYTHON_PATH} -m pip install --upgrade --user pip setuptools

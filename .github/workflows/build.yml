@@ -27,7 +27,7 @@ jobs:
       with:
         name: kivySnake-android-arm64
         # replace helloWorld with package name
-        path: /home/runner/work/throwawayrepo/throwawayrepo/src/bin/helloWorld-0.1-armeabi-v7a-debug.apk
+        path: /home/runner/work/throwawayrepo/throwawayrepo/src/bin/myapps-0.1-armeabi-v7a-debug.apk
 
     - name: Create dist tarball
       run: 'tar -cjvf kivySnake-android.${{ github.run_id }}.tar.bz2 ./*'

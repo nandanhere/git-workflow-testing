@@ -8,7 +8,6 @@ on:
 #    branches: [ master ]
 
 
-# TODO: change the throwawayrepo  to 
 jobs:
 
   Android:
@@ -54,44 +53,4 @@ jobs:
         asset_path: kivySnake-android.${{ github.run_id }}.tar.bz2
         asset_name: kivySnake-android.${{ github.run_id }}.tar.bz2
         asset_content_type: application/x-bzip2
-  mac:
-      runs-on: macos-latest
-
-      steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Execute script to build MacOS .dmg file
-        run: "build/mac/buildDmg.sh"
-        shell: bash
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: kivySnake-mac-x86_64
-          path: dist/
-
-      - name: Create dist tarball
-        run: 'tar -cjvf kivySnake-mac-x86_64.${{ github.run_id }}.tar.bz2 dist/*'
-        shell: bash
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.run_id }}_mac
-          release_name: 'Public Build Artifact: Mac ${{ github.run_id }}'
-          draft: false
-          prerelease: true
-
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: kivySnake-mac-x86_64.${{ github.run_id }}.tar.bz2
-          asset_name: kivySnake-mac-x86_64.${{ github.run_id }}.tar.bz2
-          asset_content_type: application/x-bzip2
+  

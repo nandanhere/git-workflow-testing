@@ -1,3 +1,4 @@
+#this is for reference. this .spec file was used to make the kivysnake application apk
 [app]
 
 # (str) Title of your application

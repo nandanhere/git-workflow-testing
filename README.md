@@ -1,4 +1,4 @@
-# Throw away repo
+# git-workflow-testing
 repo to test out the android build workflow for kivy
 ### What Works:
 - Building the apk, though it takes 15+ mins

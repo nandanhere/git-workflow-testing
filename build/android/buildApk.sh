@@ -52,10 +52,10 @@ which python3.7
 
 
 # Export APPRUN if running from an extracted image
-cd /home/runner/work/throwawayrepo/throwawayrepo/src
+cd /home/runner/work/git-workflow-testing/git-workflow-testing/src
 echo y | buildozer init 
 rm buildozer.spec
-mv /home/runner/work/throwawayrepo/throwawayrepo/build/android/buildozer.spec buildozer.spec
+mv /home/runner/work/git-workflow-testing/git-workflow-testing/build/android/buildozer.spec buildozer.spec
 echo y | buildozer android debug 
 
 exit "$?"
